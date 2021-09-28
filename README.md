@@ -22,3 +22,18 @@ mean_vec_char = mean(pull(example_df, vec_char))
 
 mean_vec_factor = mean(pull(example_df, vec_factor))
 ```
+```{r}
+install.packages("palmerpenguins")
+
+data("penguins", package = "palmerpenguins")
+
+The dataset contains a sample of size 344, constructs the specified species island,
+bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex. The number
+of rows of the dataset is `r nrow(penguins)` and the numbers of columns of the datasets
+is `r ncol(penguins)`.The mean of the flipper length is `r mean(pull(penguins, flipper_length_mm))`.
+
+p1 = ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("plot.png", p1)
+
+```
