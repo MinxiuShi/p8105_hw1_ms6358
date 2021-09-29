@@ -14,6 +14,7 @@ example_df = tibble(
   vec_factor = factor(c("good", "good", "good", "great", "great", "great", "excellent", "excellent", "excellent", "excellent"))
 )
 
+#I'm gonna take this function to calculate the mean
 mean_vec_numeric = mean(pull(example_df, vec_numeric))
 
 mean_vec_logical = mean(pull(example_df, vec_logical))
@@ -34,6 +35,7 @@ bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex. The number
 of rows of the dataset is `r nrow(penguins)` and the numbers of columns of the datasets
 is `r ncol(penguins)`.The mean of the flipper length is `r mean(pull(penguins, flipper_length_mm))`.
 
+#draw the scatterplot
 p1 = ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
 ggsave("plot.png", p1)
