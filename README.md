@@ -21,6 +21,8 @@ mean_vec_logical = mean(pull(example_df, vec_logical))
 mean_vec_char = mean(pull(example_df, vec_char))
 
 mean_vec_factor = mean(pull(example_df, vec_factor))
+
+We fail to get the mean of character vector and factor vector since they are neithor numbers or logicals, character and factor can't calculate mean.
 ```
 ```{r}
 install.packages("palmerpenguins")
